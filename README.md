@@ -40,8 +40,8 @@ I am passionate about building **scalable, efficient, and user-centric** applica
 ## 📊 Performance Optimization  
 
 📄 **Lighthouse Performance Report:**  
-- 🔹 [Mobile Report](reports/lighthouse-mobile.pdf)  
-- 🔹 [Desktop Report](https://github.com/Sasanka14/portfolio/blob/main/reports/PageSpeed%20Insights%20Portfolio%20Mobile.pdf)  
+- 🔹 [Mobile Report](https://github.com/Sasanka14/portfolio/blob/main/reports/PageSpeed%20Insights%20Portfolio%20Mobile.pdf)  
+- 🔹 [Desktop Report](https://github.com/Sasanka14/portfolio/blob/main/reports/PageSpeed%20Insights%20Portfolio%20Desktop.pdf)  
 
 ✔️ **Fast Performance** 🚀  
 ✔️ **High Accessibility** ✅  
