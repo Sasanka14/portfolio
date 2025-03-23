@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get in touch with Sasanka Sekhar Kundu for web development projects and collaborations">
+    <meta name="keywords" content="contact, web developer, portfolio, hire, freelance, project inquiry">
+    <meta name="author" content="Sasanka Sekhar Kundu">
+    <title>SasankaWrites | Contact Me</title>
+
+    <!-- Tailwind CSS and Aceternity UI Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- EmailJS SDK v4 -->
+    <script type="text/javascript" 
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "zXsqC9QTqmzZ0u6S_",
+          });
+       })();
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive/global.css">
+    <link rel="stylesheet" href="../css/responsive/components.css">
+    <link rel="stylesheet" href="../css/contact.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+
+    <style>
+        /* Form input focus states */
+        .form-input:focus {
+            @apply ring-2 ring-purple-500 border-transparent;
+        }
+
+        /* Success animation */
+        @keyframes checkmark {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .checkmark {
+            animation: checkmark 0.5s ease-in-out forwards;
+        }
+
+        /* Error shake animation */
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Animated Background Elements -->
+    <div class="radial-bg"></div>
+
+    <!-- Rotating Beams -->
+    <div class="background-beams">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+    </div>
+
+    <!-- Animated Grid -->
+    <div class="animated-grid">
+        <!-- Vertical Lines -->
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+
+        <!-- Horizontal Lines -->
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <!-- Glowing Orbs -->
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gradient text-center">Get In Touch</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto text-center mb-12">
+                Have a project in mind or want to collaborate? Feel free to reach out!
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div
+                    class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8 hover:bg-gray-900/70 transition-all duration-300">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-envelope text-purple-500 mr-3"></i>
+                        Send a Message
+                    </h2>
+
+                    <!-- Form -->
+                    <form id="contact-form" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-user text-gray-500"></i>
+                                </div>
+                                <input type="text" id="name" name="user_name" required
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Name">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-500"></i>
+                                </div>
+                                <input type="email" id="email" name="user_email" required
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Email address">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-comment-alt text-gray-500"></i>
+                                </div>
+                                <input type="text" id="subject" name="user_subject"
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Subject">
+                            </div>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message <span
+                                    class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="6" required
+                                    class="form-input block w-full px-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Message"></textarea>
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+
+                        <!-- Honeypot field for spam protection -->
+                        <div class="hidden">
+                            <input type="text" name="bot_check" id="bot_check">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message (Hidden by Default) -->
+                    <div id="success-message"
+                        class="hidden bg-green-900/50 border border-green-700 rounded-lg p-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="mr-3 bg-green-500 text-white rounded-full p-1">
+                                <i class="fas fa-check checkmark"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-green-400">Message Sent Successfully!</h3>
+                                <p class="text-sm text-gray-300">Thank you for reaching out. I'll get back to you as
+                                    soon as possible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error Message (Hidden by Default) -->
+                    <div id="error-message" class="hidden bg-red-900/50 border border-red-700 rounded-lg p-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="mr-3 bg-red-500 text-white rounded-full p-1">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-red-400">Message Could Not Be Sent</h3>
+                                <p class="text-sm text-gray-300">There was an error sending your message. Please try
+                                    again later.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Connect With Me -->
+                    <div
+                        class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8 hover:bg-gray-900/70 transition-all duration-300">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-3"></i>
+                            Connect With Me
+                        </h2>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <a href="https://github.com/Sasanka14" target="_blank"
+                                class="bg-gray-800/70 hover:bg-gray-700/70 rounded-lg p-4 text-center transition-all duration-300 group flex flex-col items-center">
+                                <i
+                                    class="fab fa-github text-3xl mb-2 text-gray-400 group-hover:text-white transition-colors"></i>
+                                <span
+                                    class="text-sm text-gray-400 group-hover:text-white transition-colors">GitHub</span>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/sasanka-sekhar-kundu-b746072a7" target="_blank"
+                                class="bg-gray-800/70 hover:bg-blue-700/70 rounded-lg p-4 text-center transition-all duration-300 group flex flex-col items-center">
+                                <i
+                                    class="fab fa-linkedin-in text-3xl mb-2 text-gray-400 group-hover:text-white transition-colors"></i>
+                                <span
+                                    class="text-sm text-gray-400 group-hover:text-white transition-colors">LinkedIn</span>
+                            </a>
+
+                            <a href="https://www.instagram.com/__kuronotsubasa__?igsh=MWdyNHd2NDFzZWl3Yw=="
+                                target="_blank"
+                                class="bg-gray-800/70 hover:bg-pink-700/70 rounded-lg p-4 text-center transition-all duration-300 group flex flex-col items-center">
+                                <i
+                                    class="fab fa-instagram text-3xl mb-2 text-gray-400 group-hover:text-white transition-colors"></i>
+                                <span
+                                    class="text-sm text-gray-400 group-hover:text-white transition-colors">Instagram</span>
+                            </a>
+
+                            <a href="https://discord.gg/PaxFQDj3MP" target="_blank"
+                                class="bg-gray-800/70 hover:bg-indigo-700/70 rounded-lg p-4 text-center transition-all duration-300 group flex flex-col items-center">
+                                <i
+                                    class="fab fa-discord text-3xl mb-2 text-gray-400 group-hover:text-white transition-colors"></i>
+                                <span
+                                    class="text-sm text-gray-400 group-hover:text-white transition-colors">Discord</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other Contact Methods -->
+                    <div
+                        class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8 hover:bg-gray-900/70 transition-all duration-300">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-address-card text-green-500 mr-3"></i>
+                            Contact Information
+                        </h2>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="p-3 bg-green-500/20 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-white">Email</h3>
+                                    <a href="mailto:sasankasekhark@gmail.com"
+                                        class="text-gray-300 hover:text-purple-500 transition-colors">sasankasekhark@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="p-3 bg-blue-500/20 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-white">Location</h3>
+                                    <p class="text-gray-300">Nashik, Maharashtra, India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="p-3 bg-purple-500/20 rounded-lg mr-4">
+                                    <i class="fas fa-clock text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-white">Working Hours</h3>
+                                    <p class="text-gray-300">Monday - Friday: 9am - 6pm IST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div
+                        class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8 hover:bg-gray-900/70 transition-all duration-300">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-question-circle text-yellow-500 mr-3"></i>
+                            FAQ
+                        </h2>
+
+                        <div class="space-y-4" x-data="{active: null}">
+                            <div class="border-b border-gray-800 pb-4">
+                                <button class="flex justify-between items-center w-full text-left"
+                                    @click="active = active === 1 ? null : 1">
+                                    <span class="font-medium">How soon can you start on a new project?</span>
+                                    <i class="fas"
+                                        :class="active === 1 ? 'fa-minus text-purple-500' : 'fa-plus text-gray-400'"></i>
+                                </button>
+                                <div x-show="active === 1" class="mt-2 text-gray-400 text-sm" x-collapse>
+                                    I can typically start on new projects within 1-2 weeks, depending on my current
+                                    workload and the scope of your project.
+                                </div>
+                            </div>
+
+                            <div class="border-b border-gray-800 pb-4">
+                                <button class="flex justify-between items-center w-full text-left"
+                                    @click="active = active === 2 ? null : 2">
+                                    <span class="font-medium">What is your preferred payment method?</span>
+                                    <i class="fas"
+                                        :class="active === 2 ? 'fa-minus text-purple-500' : 'fa-plus text-gray-400'"></i>
+                                </button>
+                                <div x-show="active === 2" class="mt-2 text-gray-400 text-sm" x-collapse>
+                                    We accept UPI (Google Pay, PhonePe, Paytm) and bank transfers for Indian clients,
+                                    while international clients can pay via PayPal, crypto, and Stripe. I typically
+                                    require a 50% deposit upfront.
+                                </div>
+                            </div>
+
+                            <div class="border-b border-gray-800 pb-4">
+                                <button class="flex justify-between items-center w-full text-left"
+                                    @click="active = active === 3 ? null : 3">
+                                    <span class="font-medium">Do you offer maintenance after project completion?</span>
+                                    <i class="fas"
+                                        :class="active === 3 ? 'fa-minus text-purple-500' : 'fa-plus text-gray-400'"></i>
+                                </button>
+                                <div x-show="active === 3" class="mt-2 text-gray-400 text-sm" x-collapse>
+                                    Yes, I offer maintenance packages to keep your website or application running
+                                    smoothly. We can discuss the details based on your specific needs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Mini Section -->
+    <section class="py-12 bg-gray-900 mb-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left md:flex-1">
+                        <h2 class="text-2xl font-bold">Subscribe to My Updates</h2>
+                        <p class="text-gray-400 mt-2">Get blog posts and news delivered to your inbox</p>
+                    </div>
+                    <div class="w-full md:w-auto md:flex-1">
+                        <form class="newsletter-form flex flex-col sm:flex-row gap-3">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Your email address" 
+                                class="bg-gray-800 text-white rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                required
+                            >
+                            <button 
+                                type="submit" 
+                                class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg px-4 py-2 hover:opacity-90 transition whitespace-nowrap"
+                            >
+                                Subscribe
+                            </button>
+                        </form>
+                        <div class="newsletter-response text-sm mt-2 hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/components-loader.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact-form.js"></script>
+    <script type="module" src="../js/newsletter-form.js"></script>
+</body>
+
+</html>

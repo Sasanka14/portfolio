@@ -1,0 +1,94 @@
+/* Header Styles */
+.nav-link {
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #a855f7;
+}
+
+.nav-link.active {
+    color: #8b5cf6;
+    font-weight: 500;
+}
+
+.logo-hover {
+    transition: transform 0.3s ease;
+}
+
+.logo-hover:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    transition: transform 0.3s ease;
+}
+
+.logo-hover:hover .logo-img {
+    transform: rotate(12deg);
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Menu Button Animation */
+#mobile-menu-button {
+    transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+#mobile-menu-button[aria-expanded="true"] svg {
+    transform: scale(1.1);
+}
+
+/* Active navigation link styles */
+.nav-link.active {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 2px;
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    border-radius: 2px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Hide the underline for mobile menu active links */
+    #mobile-menu .nav-link.active::after {
+        display: none;
+    }
+    
+    /* Mobile menu link styles */
+    #mobile-menu .nav-link {
+        display: block;
+        width: 100%;
+        border-radius: 0.375rem;
+    }
+    
+    #mobile-menu .nav-link.active {
+        background-color: rgba(139, 92, 246, 0.1);
+    }
+    
+    /* Ensure fixed positioning works correctly */
+    body.mobile-menu-open {
+        overflow: hidden;
+    }
+} 

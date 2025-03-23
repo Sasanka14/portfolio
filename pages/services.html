@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SasankaWrites | Services</title>
+
+    <!-- Tailwind CSS and Aceternity UI Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/responsive/global.css">
+    <link rel="stylesheet" href="../css/responsive/components.css">
+    <link rel="stylesheet" href="../css/responsive/services.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+
+    <style>
+        /* Service Cards Animation */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Price toggle switch */
+        .price-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .price-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .price-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(107, 114, 128, 0.3);
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .price-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .price-slider {
+            background-color: rgba(139, 92, 246, 0.8);
+        }
+
+        input:checked + .price-slider:before {
+            transform: translateX(28px);
+        }
+
+        /* Gradient text */
+        .text-gradient {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glow effect */
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+        }
+
+        /* Badge animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 640px) {
+            .service-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .price-switch {
+                width: 50px;
+                height: 26px;
+            }
+            
+            .price-slider:before {
+                height: 20px;
+                width: 20px;
+                left: 3px;
+                bottom: 3px;
+            }
+            
+            input:checked + .price-slider:before {
+                transform: translateX(24px);
+            }
+            
+            .badge-pulse {
+                font-size: 0.65rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .py-16 {
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+            
+            .py-12 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            
+            .pt-32 {
+                padding-top: 6rem;
+            }
+            
+            h1.text-4xl {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+            
+            p.text-lg {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+        }
+        
+        /* Improve tier pricing display on small screens */
+        @media (max-width: 480px) {
+            h3.text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            
+            .p-6 {
+                padding: 1.25rem;
+            }
+            
+            .mb-12 {
+                margin-bottom: 2rem;
+            }
+            
+            .mb-6 {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Better spacing for elements on mobile */
+        @media (max-width: 390px) {
+            .gap-4 {
+                gap: 0.75rem;
+            }
+            
+            .px-6 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .py-3 {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            
+            h2.text-3xl {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Animated Background Elements -->
+    <div class="radial-bg"></div>
+
+    <!-- Rotating Beams -->
+    <div class="background-beams">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+    </div>
+
+    <!-- Animated Grid -->
+    <div class="animated-grid">
+        <!-- Vertical Lines -->
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        
+        <!-- Horizontal Lines -->
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        
+        <!-- Glowing Orbs -->
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 relative">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+                        Professional <span class="text-gradient">Services</span>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-2 sm:px-0">
+                        From full-stack web development to AI projects, I offer professional services tailored to bring your ideas to life with modern, scalable, and user-friendly solutions.
+                    </p>
+                    
+                    <!-- Billing Toggle -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-16">
+                        <span class="text-gray-300 font-medium text-sm sm:text-base">Pay Per Project</span>
+                        <label class="price-switch my-2" id="billing-toggle-container">
+                            <input type="checkbox" id="billing-toggle">
+                            <span class="price-slider"></span>
+                        </label>
+                        <span class="text-gray-300 font-medium text-sm sm:text-base">Pay Per Hour</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Pricing Section -->
+        <section class="py-12 md:py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                    
+                    <!-- Free Components Tier -->
+                    <div class="service-card bg-gray-900/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-purple-600/50 transition-all h-full flex flex-col">
+                        <div class="p-4 sm:p-6 border-b border-gray-800">
+                            <p class="uppercase tracking-wider text-xs text-green-400 font-semibold mb-2">Existing Components</p>
+                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-1">Free</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mb-4">All the components that are freely available on the website are free to use.</p>
+                            
+                            <a href="#" class="group relative inline-flex items-center justify-center w-full py-2 sm:py-3 font-medium tracking-wide text-white bg-transparent rounded-lg border border-gray-700 hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-black">
+                                <span class="text-sm sm:text-base">Browse Components</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="p-4 sm:p-6 bg-gray-900/80 flex-grow">
+                            <ul class="space-y-2 sm:space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span>A growing library of awesome components</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span>React / Next.js / Tailwind CSS code</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span>Serves a wide variety of audience</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span>MIT License. Personal or commercial projects.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span>Contact over chat for support</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Components Tier -->
+                    <div class="service-card bg-gray-900/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-purple-600/50 transition-all h-full flex flex-col">
+                        <div class="p-6 border-b border-gray-800">
+                            <p class="uppercase tracking-wider text-xs text-blue-400 font-semibold mb-2">Custom Components</p>
+                            <div class="flex items-center">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-1">
+                                    <span class="per-project-price">₹59,995</span>
+                                    <span class="per-hour-price hidden">₹8,000</span>
+                                </h3>
+                                <span class="text-gray-400 text-sm ml-1 per-project-price">/month</span>
+                                <span class="text-gray-400 text-sm ml-1 per-hour-price hidden">/hour</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 per-project-price">pause or cancel anytime</p>
+                            <p class="text-gray-400 text-sm mb-4">Standalone components tailored to your needs and easily integrated. Perfect for website elements or sections.</p>
+                            
+                            <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-black">
+                                Buy Now
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="p-6 bg-gray-900/80 flex-grow">
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>As many components as possible in a month</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>React / Next.js / Tailwind CSS code</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>Design + Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>Unlimited Revisions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>24-hour support response time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>Private communication channel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>4-7 days turnaround time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span>Pause or cancel anytime</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Pages Tier -->
+                    <div class="service-card bg-gray-900/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-purple-600/50 transition-all h-full flex flex-col relative glow-effect">
+                        <div class="absolute top-0 right-0 -mt-1 -mr-1">
+                            <span class="inline-flex items-center px-3 py-1 rounded-bl-lg rounded-tr-xl text-xs font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white badge-pulse">
+                                <i class="fas fa-star mr-1"></i> Most Popular
+                            </span>
+                        </div>
+                        
+                        <div class="p-6 border-b border-gray-800">
+                            <p class="uppercase tracking-wider text-xs text-purple-400 font-semibold mb-2">Pages</p>
+                            <div class="flex items-center">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-1">
+                                    <span class="per-project-price">₹99,999</span>
+                                    <span class="per-hour-price hidden">₹18,000</span>
+                                </h3>
+                                <span class="text-gray-400 text-sm ml-1 per-project-price">starts at</span>
+                                <span class="text-gray-400 text-sm ml-1 per-hour-price hidden">/hour</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 per-project-price">pause or cancel anytime</p>
+                            <p class="text-gray-400 text-sm mb-4">Best for early-stage startups and businesses that need a marketing site and ongoing developmental work.</p>
+                            
+                            <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-black">
+                                Buy Now
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="p-6 bg-gray-900/80 flex-grow">
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>One request / page at a time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>React / Next.js / Tailwind CSS code</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Design + Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Unlimited Revisions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>CMS integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Search Engine Optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>24-hour support response time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Private communication channel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>7-10 days turnaround time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Pause or cancel anytime</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Multi Page Website Tier -->
+                    <div class="service-card bg-gray-900/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-purple-600/50 transition-all h-full flex flex-col">
+                        <div class="p-6 border-b border-gray-800">
+                            <p class="uppercase tracking-wider text-xs text-pink-400 font-semibold mb-2">Multi Page Website</p>
+                            <div class="flex items-center">
+                                <h3 class="text-2xl md:text-3xl font-bold mb-1">
+                                    <span class="per-project-price">₹79,995</span>
+                                    <span class="per-hour-price hidden">₹12,000</span>
+                                </h3>
+                                <span class="text-gray-400 text-sm ml-1 per-project-price">/month</span>
+                                <span class="text-gray-400 text-sm ml-1 per-hour-price hidden">/hour</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">Best for small businesses and startups that need a performant website that looks great and converts visitors to customers.</p>
+                            
+                            <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-transparent rounded-lg border border-pink-500 hover:bg-pink-500/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 focus:ring-offset-black">
+                                Contact Us
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="p-6 bg-gray-900/80 flex-grow">
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Multi-page landing page website</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Web Apps and SaaS Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>AI Apps development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Design + Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>24-hour support response time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Private communication channel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Unlimited Revisions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-3"></i>
+                                    <span>Negotiable delivery time</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Service Tiers -->
+        <section class="py-12 md:py-16 relative">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center">
+                    Additional <span class="text-gradient">Services</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                    <!-- Code Fix and Debug -->
+                    <div class="service-card bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all p-6">
+                        <div class="p-4 bg-amber-500/10 rounded-lg mb-6 inline-block">
+                            <i class="fas fa-bug text-amber-500 text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-3">Code Fix & Debug</h3>
+                        <p class="text-gray-300 mb-4">Expert troubleshooting for your coding issues. I'll diagnose and fix bugs in your application quickly and efficiently.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <span class="text-xl font-bold text-amber-400">₹9,500</span>
+                            <span class="text-gray-400 text-sm ml-1">/hour</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-500 mt-1 mr-3"></i>
+                                <span>Rapid bug identification and resolution</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-500 mt-1 mr-3"></i>
+                                <span>Performance optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-500 mt-1 mr-3"></i>
+                                <span>Code review and quality improvements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-amber-500 mt-1 mr-3"></i>
+                                <span>Documentation of fixes</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-transparent rounded-lg border border-amber-500 hover:bg-amber-500/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 focus:ring-offset-black">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Backend Development -->
+                    <div class="service-card bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-green-500/50 transition-all p-6">
+                        <div class="p-4 bg-green-500/10 rounded-lg mb-6 inline-block">
+                            <i class="fas fa-server text-green-500 text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-3">Backend Development</h3>
+                        <p class="text-gray-300 mb-4">Robust server-side solutions with secure, scalable APIs and database design for your application's backbone.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <span class="text-xl font-bold text-green-400">₹6,500</span>
+                            <span class="text-gray-400 text-sm ml-1">/hour</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>API development and integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Database design and optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Authentication systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Security implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span>Server architecture design</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-transparent rounded-lg border border-green-500 hover:bg-green-500/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 focus:ring-offset-black">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- AI Projects -->
+                    <div class="service-card bg-gradient-to-br from-gray-900/80 to-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden border border-gray-800 hover:border-cyan-500/50 transition-all p-6">
+                        <div class="p-4 bg-cyan-500/10 rounded-lg mb-6 inline-block">
+                            <i class="fas fa-brain text-cyan-500 text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-3">Small AI Projects</h3>
+                        <p class="text-gray-300 mb-4">Custom AI solutions to enhance your applications with intelligent features and automated workflows.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <span class="text-xl font-bold text-cyan-400">₹28,000 - ₹65,000</span>
+                            <span class="text-gray-400 text-sm ml-2">per project</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                                <span>Chatbot development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                                <span>Data analysis and visualization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                                <span>Content generation systems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                                <span>Recommendation engines</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-cyan-500 mt-1 mr-3"></i>
+                                <span>AI integration with existing apps</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="group relative inline-flex items-center justify-center w-full py-3 font-medium tracking-wide text-white bg-transparent rounded-lg border border-cyan-500 hover:bg-cyan-500/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 focus:ring-offset-black">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-12 md:py-16 lg:py-24 relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="bg-gradient-to-br from-gray-900/90 to-purple-900/30 backdrop-blur-lg rounded-2xl p-6 md:p-8 lg:p-12 border border-purple-500/30 relative overflow-hidden">
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl"></div>
+                    
+                    <div class="relative z-10 text-center max-w-4xl mx-auto">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+                            Ready to Start Your <span class="text-gradient">Next Project</span>?
+                        </h2>
+                        
+                        <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
+                            Let's collaborate to bring your ideas to life with modern, scalable, and user-friendly solutions. Get in touch today to discuss your project requirements.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                            <a href="../pages/contact.html" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 font-medium text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-black">
+                                Contact Me
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </a>
+                            
+                            <a href="../pages/projects.html" class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 font-medium text-white bg-transparent border border-gray-600 hover:border-purple-500 hover:bg-gray-800/50 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:ring-offset-black">
+                                View My Work
+                                <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../js/components-loader.js"></script>
+    <script>
+        // Pricing toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('billing-toggle');
+            const projectPrices = document.querySelectorAll('.per-project-price');
+            const hourlyPrices = document.querySelectorAll('.per-hour-price');
+            
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Show hourly pricing
+                    projectPrices.forEach(el => el.classList.add('hidden'));
+                    hourlyPrices.forEach(el => el.classList.remove('hidden'));
+                } else {
+                    // Show project pricing
+                    projectPrices.forEach(el => el.classList.remove('hidden'));
+                    hourlyPrices.forEach(el => el.classList.add('hidden'));
+                }
+            });
+            
+            // Initialize with project pricing
+            projectPrices.forEach(el => el.classList.remove('hidden'));
+            hourlyPrices.forEach(el => el.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html> 

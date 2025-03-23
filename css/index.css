@@ -1,0 +1,222 @@
+/* Index page specific styles */
+
+/* Project section enhanced styles */
+#projects {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Project card styles */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.2);
+}
+
+/* Project tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-tag {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #c084fc;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+/* Project card content */
+.project-card .p-5, 
+.project-card .p-6 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+/* Ensure the description takes up limited space */
+.project-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Button container should be at bottom */
+.project-card .flex-col {
+    margin-top: auto;
+}
+
+/* Featured project indicator */
+.project-card[data-featured="true"]::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.8), rgba(59, 130, 246, 0.8));
+    background-size: 200% 200%;
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0;
+    animation: gradient 5s ease infinite;
+    transition: opacity 0.3s ease;
+}
+
+.project-card[data-featured="true"]:hover::before {
+    opacity: 0.1;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+    .project-card {
+        min-height: auto;
+    }
+    
+    .project-card .p-5,
+    .project-card .p-6 {
+        padding: 1rem;
+    }
+    
+    .project-tag {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    /* Adjust text sizes on mobile */
+    .project-card h3 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 0.35rem;
+    }
+    
+    .project-card p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Smaller buttons on mobile */
+    .project-card button,
+    .project-card a {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    
+    .project-card i {
+        font-size: 0.8rem;
+    }
+}
+
+/* Better spacing between buttons on small screens */
+.project-card .flex-col {
+    gap: 0.5rem;
+}
+
+.project-card .flex-col > .flex {
+    gap: 0.5rem;
+}
+
+/* Adjust grid for different screen sizes */
+@media (max-width: 639px) {
+    #featured-projects .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    #featured-projects .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #featured-projects .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #featured-projects .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Fix for Safari and some mobile browsers */
+@supports (-webkit-touch-callout: none) {
+    .project-card {
+        height: auto;
+    }
+}
+
+/* CTA button styling */
+#featured-projects .text-center a {
+    transition: all 0.3s ease;
+}
+
+#featured-projects .text-center a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Latest projects styling */
+.project-card[data-latest="true"] {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card[data-latest="true"]::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3));
+    border-radius: 13px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.project-card[data-latest="true"]:hover::after {
+    opacity: 0.15;
+}
+
+/* Contact form animations */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradient -->
+  <defs>
+    <linearGradient id="flowerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background (optional) -->
+  <rect width="32" height="32" rx="16" fill="#000000" opacity="0.1"/>
+  
+  <!-- Flower Symbol -->
+  <g id="flower" fill="url(#flowerGradient)" transform="translate(1, 1) scale(0.3)">
+    <!-- Petals -->
+    <path d="M50,0 C55,15 70,20 50,50 C30,20 45,15 50,0 Z" />
+    <path d="M50,0 C55,15 70,20 50,50 C30,20 45,15 50,0 Z" transform="rotate(72 50 50)" />
+    <path d="M50,0 C55,15 70,20 50,50 C30,20 45,15 50,0 Z" transform="rotate(144 50 50)" />
+    <path d="M50,0 C55,15 70,20 50,50 C30,20 45,15 50,0 Z" transform="rotate(216 50 50)" />
+    <path d="M50,0 C55,15 70,20 50,50 C30,20 45,15 50,0 Z" transform="rotate(288 50 50)" />
+    
+    <!-- Adding highlight to the petals -->
+    <g fill="#FFFFFF" opacity="0.3">
+      <circle r="2" cx="45" cy="20" />
+      <circle r="1.5" cx="60" cy="25" />
+      <circle r="1.8" cx="47" cy="35" />
+      <circle r="1.2" cx="53" cy="15" />
+      <circle r="1.4" cx="40" cy="30" />
+    </g>
+  </g>
+</svg> 

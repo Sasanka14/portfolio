@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md" aria-label="Main Navigation">
+    <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold flex items-center logo-hover" aria-label="SasankaWrites Home">
+                <img src="/images/logo-modern.svg" alt="SasankaWrites Logo" class="h-8 sm:h-10 mr-2 logo-img" width="40" height="40">
+            </a>
+            <div class="hidden md:flex space-x-4 lg:space-x-8">
+                <a href="/" class="nav-link text-sm lg:text-base" aria-label="Home">Home</a>
+                <a href="/pages/about.html" class="nav-link text-sm lg:text-base" aria-label="About Me">About</a>
+                <a href="/pages/projects.html" class="nav-link text-sm lg:text-base" aria-label="My Projects">Projects</a>
+                <a href="/pages/services.html" class="nav-link text-sm lg:text-base" aria-label="My Services">Services</a>
+                <a href="/pages/blog.html" class="nav-link text-sm lg:text-base" aria-label="My Blog">Blog</a>
+                <a href="/pages/contact.html" class="nav-link text-sm lg:text-base" aria-label="Contact Me">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button 
+                class="md:hidden p-2 rounded-lg hover:bg-gray-700/50 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/50" 
+                id="mobile-menu-button" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu"
+                aria-label="Toggle navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div 
+    class="hidden md:hidden fixed w-full bg-black/90 backdrop-blur-md z-40" 
+    id="mobile-menu" 
+    aria-hidden="true"
+    aria-labelledby="mobile-menu-button">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col space-y-4">
+            <a href="/" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="Home">Home</a>
+            <a href="/pages/about.html" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="About Me">About</a>
+            <a href="/pages/projects.html" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="My Projects">Projects</a>
+            <a href="/pages/services.html" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="My Services">Services</a>
+            <a href="/pages/blog.html" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="My Blog">Blog</a>
+            <a href="/pages/contact.html" class="nav-link py-2 px-4 rounded-md hover:bg-gray-800/50" aria-label="Contact Me">Contact</a>
+        </div>
+    </div>
+</div> 

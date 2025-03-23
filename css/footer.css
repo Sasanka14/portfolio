@@ -1,0 +1,42 @@
+/* Footer Styles */
+.social-hover-fx {
+    @apply text-gray-400 transition-all duration-300;
+}
+
+.hover-github:hover {
+    @apply text-gray-100;
+}
+
+.hover-linkedin:hover {
+    @apply text-blue-500;
+}
+
+.hover-instagram:hover {
+    @apply text-pink-500;
+}
+
+.hover-discord:hover {
+    @apply text-indigo-500;
+}
+
+.hover-youtube:hover {
+    @apply text-red-500;
+}
+
+/* Footer Animation */
+footer {
+    @apply transition-all duration-300;
+}
+
+footer:hover {
+    @apply bg-black/70;
+}
+
+/* Social Icons Animation */
+.social-hover-fx i {
+    @apply transition-transform duration-300;
+}
+
+.social-hover-fx:hover i {
+    @apply transform -translate-y-1;
+} 

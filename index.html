@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SasankaWrites - Portfolio of a Next.js developer showcasing web development projects, skills, and expertise">
+    <meta name="keywords" content="web development, frontend, Next.js, React, JavaScript, portfolio, projects, responsive design">
+    <meta name="author" content="Sasanka Sekhar Kundu">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="SasankaWrites - Web Developer Portfolio">
+    <meta property="og:description" content="Explore my portfolio of web development projects showcasing Next.js, React, and modern web technologies">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sasankawrites.com">
+    <meta property="og:image" content="https://sasankawrites.com/images/logo-modern.svg">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SasankaWrites - Web Developer Portfolio">
+    <meta name="twitter:description" content="Explore my portfolio of web development projects showcasing Next.js, React, and modern web technologies">
+    <meta name="twitter:image" content="https://sasankawrites.com/images/logo-modern.svg">
+    
+    <title>SasankaWrites - Next.js Developer Portfolio</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/components-loader.js" as="script">
+    <link rel="preload" href="images/logo-modern.svg" as="image" type="image/svg+xml">
+    
+    <!-- Tailwind CSS and Aceternity UI Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- EmailJS SDK v4 -->
+    <script type="text/javascript" 
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "zXsqC9QTqmzZ0u6S_",
+          });
+       })();
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive/global.css">
+    <link rel="stylesheet" href="css/responsive/components.css">
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
+</head>
+<body class="bg-black text-white">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-purple-700 focus:text-white focus:z-50">Skip to content</a>
+    
+    <!-- Header Container -->
+    <div id="header-container" role="banner"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+    <!-- Animated Background Elements -->
+        <div class="radial-bg" aria-hidden="true"></div>
+    
+    <!-- Rotating Beams -->
+        <div class="background-beams" aria-hidden="true">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+    </div>
+    
+    <!-- Animated Grid -->
+        <div class="animated-grid" aria-hidden="true">
+        <!-- Vertical Lines -->
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        <div class="v-line"></div>
+        
+        <!-- Horizontal Lines -->
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        <div class="h-line"></div>
+        
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        
+        <!-- Glowing Orbs -->
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+    </div>
+
+    <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden" aria-labelledby="hero-heading">
+        <!-- Spotlight Effects -->
+            <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute -top-40 -left-10 md:-left-32 md:-top-20 h-screen w-[50vw] bg-gradient-to-r from-white/20 to-transparent blur-3xl"></div>
+            <div class="absolute h-[80vh] w-[50vw] top-10 left-full bg-gradient-to-l from-purple-500/20 to-transparent blur-3xl"></div>
+            <div class="absolute left-80 top-28 h-[80vh] w-[50vw] bg-gradient-to-r from-blue-500/20 to-transparent blur-3xl"></div>
+        </div>
+
+        <!-- Grid Background -->
+            <div class="absolute inset-0 bg-grid-white/[0.03] bg-[size:50px_50px]" aria-hidden="true"></div>
+
+        <!-- Radial Gradient Overlay -->
+            <div class="absolute inset-0 bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" aria-hidden="true"></div>
+
+        <!-- Content -->
+            <div class="relative z-10 container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                    <p class="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mx-auto mb-4" aria-hidden="true">
+                    Dynamic Web Magic with Next.js
+                </p>
+                    <h1 id="hero-heading" class="text-[32px] sm:text-[40px] md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
+                    Transforming Concepts into Seamless User Experiences
+                </h1>
+                <p class="text-center md:tracking-wider mb-8 text-sm md:text-lg lg:text-2xl">
+                    Hi! I'm <span class="text-purple-500">Sasanka</span>, a Next.js Developer based in India.
+                </p>
+                    <a href="#projects" class="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 font-medium tracking-wide text-white bg-purple-600 rounded-full hover:bg-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 focus:ring-offset-black">
+                    Show my work
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                </a>
+                
+                <!-- Social Media Icons -->
+                <div class="flex justify-center items-center space-x-6 mt-8">
+                        <a href="https://github.com/Sasanka14" class="social-hover-fx hover-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github text-2xl" aria-hidden="true"></i>
+                    </a>
+                        <a href="https://www.linkedin.com/in/sasanka-sekhar-kundu-b746072a7" class="social-hover-fx hover-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>
+                    </a>
+                        <a href="https://www.instagram.com/__kuronotsubasa__?igsh=MWdyNHd2NDFzZWl3Yw==" class="social-hover-fx hover-instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
+                    </a>
+                        <a href="https://discord.gg/PaxFQDj3MP" class="social-hover-fx hover-discord" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-discord text-2xl" aria-hidden="true"></i>
+                    </a>
+                        <a href="#" class="social-hover-fx hover-youtube" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube text-2xl" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section Preview -->
+        <section id="about" class="py-16 md:py-20" aria-labelledby="about-heading">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 id="about-heading" class="text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
+            
+            <!-- Dynamic Content Container - Will be populated by JS -->
+            <div id="about-content" class="max-w-4xl mx-auto">
+                <!-- Content will be loaded here dynamically -->
+                    <div class="flex justify-center items-center py-8">
+                        <div class="spinner" aria-hidden="true"></div>
+                        <span class="ml-3 text-gray-300">Loading about content...</span>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+        <section id="projects" class="py-16 md:py-20 bg-gray-900/30 backdrop-blur-sm relative" aria-labelledby="projects-heading">
+            <!-- Background accents -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-0 left-1/4 w-1/2 h-1/2 bg-purple-900/10 rounded-full blur-3xl transform -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-blue-900/10 rounded-full blur-3xl transform translate-y-1/2"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 id="projects-heading" class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+                    <p class="text-gray-300 text-lg">Explore some of my recent work and personal projects</p>
+                </div>
+            
+            <!-- Dynamic Content Container - Will be populated by JS -->
+                <div id="featured-projects" class="max-w-7xl mx-auto">
+                <!-- Content will be loaded here dynamically -->
+                    <div class="flex justify-center items-center py-12">
+                        <div class="spinner" aria-hidden="true"></div>
+                        <span class="ml-3 text-gray-300">Loading projects...</span>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-20" aria-labelledby="contact-heading">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 id="contact-heading" class="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto text-center mb-12">
+                    Have a project in mind or want to collaborate? Feel free to reach out!
+                </p>
+                
+                <div class="max-w-2xl mx-auto bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-xl p-6 md:p-8 hover:bg-gray-900/50 transition-all duration-300">
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="space-y-6">
+                        <!-- Name Field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-user text-gray-500"></i>
+                                </div>
+                                <input type="text" id="name" name="user_name" required
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Name">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-500"></i>
+                                </div>
+                                <input type="email" id="email" name="user_email" required
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Email address">
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Subject Field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-comment-alt text-gray-500"></i>
+                                </div>
+                                <input type="text" id="subject" name="user_subject"
+                                    class="form-input block w-full pl-10 pr-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Subject">
+                            </div>
+                        </div>
+                        
+                        <!-- Message Field -->
+                    <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="4" required
+                                    class="form-input block w-full px-3 py-3 bg-gray-800/70 border border-gray-700 rounded-lg focus:outline-none text-white"
+                                    placeholder="Message"></textarea>
+                                <div class="error-message hidden text-red-500 text-sm mt-1"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Honeypot field for spam protection -->
+                        <div class="hidden">
+                            <input type="text" name="bot_check" id="bot_check">
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by Default) -->
+                    <div id="success-message" class="hidden bg-green-900/50 border border-green-700 rounded-lg p-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="mr-3 bg-green-500 text-white rounded-full p-1">
+                                <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                                <h3 class="font-bold text-green-400">Message Sent Successfully!</h3>
+                                <p class="text-gray-300">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Message (Hidden by Default) -->
+                    <div id="error-message" class="hidden bg-red-900/50 border border-red-700 rounded-lg p-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="mr-3 bg-red-500 text-white rounded-full p-1">
+                                <i class="fas fa-exclamation"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-red-400">Message Not Sent</h3>
+                                <p class="text-gray-300">There was an error sending your message. Please try again.</p>
+                            </div>
+                            <button class="bg-red-700 hover:bg-red-800 text-white px-3 py-1 rounded-lg text-sm transition-colors">
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+                <p class="text-gray-400 mb-8">Subscribe to my newsletter to receive updates on new blog posts, projects, and more.</p>
+                
+                <form class="newsletter-form space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Enter your email address" 
+                            class="bg-gray-800 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            required
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg px-6 py-3 hover:opacity-90 transition"
+                        >
+                            Subscribe
+                        </button>
+                    </div>
+                    
+                    <div class="pt-2 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+                        <p class="w-full text-gray-400 mb-2">I'm interested in:</p>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="interest-cooking" name="interest-cooking" class="mr-2">
+                            <label for="interest-cooking" class="text-gray-300">Cooking</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="interest-anime" name="interest-anime" class="mr-2">
+                            <label for="interest-anime" class="text-gray-300">Anime</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="interest-tech" name="interest-tech" class="mr-2">
+                            <label for="interest-tech" class="text-gray-300">Tech</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="interest-general" name="interest-general" class="mr-2" checked>
+                            <label for="interest-general" class="text-gray-300">General Updates</label>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-response hidden"></div>
+                    
+                    <div class="text-xs text-gray-500 mt-4">
+                        By subscribing, you agree to our <a href="pages/privacy-policy.html" class="underline">Privacy Policy</a> and to receive emails from us.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container" role="contentinfo"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/components-loader.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/content-loader.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script type="module" src="js/newsletter-form.js"></script>
+
+    <!-- Project Modals -->
+    <!-- Dynamic Modal Container (replaces individual project modals) -->
+    <div 
+        x-data 
+        x-show="$store.modals.current !== null" 
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-95"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-95"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+        @keydown.escape.window="$store.modals.close()"
+        style="display: none;"
+        role="dialog"
+        aria-modal="true"
+    >
+        <div class="relative bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.away="$store.modals.close()">
+            <div id="modal-content">
+                <!-- Content will be dynamically loaded by Alpine.js store -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sasanka Sekhar Kundu",
+        "url": "https://sasankawrites.com",
+        "sameAs": [
+            "https://github.com/Sasanka14",
+            "https://www.linkedin.com/in/sasanka-sekhar-kundu-b746072a7",
+            "https://www.instagram.com/__kuronotsubasa__"
+        ],
+        "jobTitle": "Next.js Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "SasankaWrites"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://sasankawrites.com",
+        "name": "SasankaWrites",
+        "description": "Next.js Developer Portfolio showcasing web development projects and skills"
+    }
+    </script>
+</body>
+</html> 
