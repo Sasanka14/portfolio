@@ -1,12 +1,3 @@
-Since you want to include the **Lighthouse performance report** as a locally stored PDF in your `README.md`, follow these steps:  
-
-### **1️⃣ Place the PDF in Your Repository**  
-Move your **Lighthouse report PDF** to your project's root directory or inside a folder like `/reports/`.  
-
-### **2️⃣ Update `README.md` to Link the PDF**  
-Here’s your updated `README.md`:  
-
----
 
 # 🌟 Sasanka Sekhar Kundu - Portfolio  
 
